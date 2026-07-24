@@ -1,0 +1,583 @@
+/* * استيراد الخطوط من Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Cause&family=Sansita:wght@700&display=swap');
+
+/* ====================================== */
+/* *         الإعدادات العامة            */
+/* ====================================== */
+
+/* # إعادة تعيين جميع العناصر */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: "Cause", serif;
+}
+
+/* # لون الخلفية الرئيسي للموقع */
+body {
+    background-color: #635c5c;
+}
+
+/* ====================================== */
+/* *         قسم الهيدر                  */
+/* ====================================== */
+
+/* # تنسيق الهيدر الرئيسي */
+/* TODO: إضافة sticky header ليبقى ثابتاً عند التمرير */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2rem auto;
+    max-width: 1200px;
+    padding: 0 20px;
+}
+
+/* # حاوية الشعار */
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* # تنسيق الشعار مع تأثير Hover */
+.logo {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+}
+
+/* * تأثير تكبير الشعار عند التمرير */
+.logo:hover {
+    transform: scale(1.1);
+    filter: drop-shadow(0 6px 12px rgba(0, 173, 181, 0.4));
+}
+
+/* ====================================== */
+/* *         قسم التنقل Navigation       */
+/* ====================================== */
+
+/* # إزالة النقاط وترتيب العناصر أفقياً */
+.navigation ul {
+    list-style-type: none;
+    display: flex;
+    gap: 2rem;
+}
+
+/* # تنسيق روابط التنقل */
+.navigation a {
+    text-decoration: none;
+    color: #EEEEEE;
+}
+
+/* * تغيير اللون عند التمرير */
+.navigation a:hover {
+    color: #00ADB5;
+}
+
+/* ====================================== */
+/* *         More Info Dropdown          */
+/* ====================================== */
+
+/* # الحاوية الرئيسية للقائمة المنسدلة */
+.dropdown {
+    position: relative;
+}
+
+/* # القائمة المنسدلة - مخفية بالبداية */
+.dropdown-menu {
+    display: none !important; /* ! إضافة important لإلغاء تأثير flex الموروث */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    /* * نفس لون خلفية About Me للتناسق */
+    background-color: #222831;
+    border-radius: 8px;
+    padding: 0.5rem 0;
+    min-width: 150px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    /* ! مهم: يجعل القائمة تظهر فوق باقي العناصر */
+    z-index: 100;
+    list-style: none;
+    flex-direction: column;
+}
+
+/* # تنسيق روابط القائمة المنسدلة */
+.dropdown-menu li a {
+    display: block;
+    padding: 0.5rem 1rem;
+    color: #EEEEEE;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+/* * تغيير اللون عند التمرير */
+.dropdown-menu li a:hover {
+    color: #00ADB5;
+}
+
+/* # إظهار القائمة عند التمرير - بدون JavaScript */
+.dropdown:hover .dropdown-menu {
+    display: flex !important; /* ! مهم لإلغاء تأثير none */
+    flex-direction: column;
+}
+
+/* ====================================== */
+/* *         الفاصل HR                   */
+/* ====================================== */
+
+/* # تخفيف شفافية الفاصل */
+hr {
+    opacity: 10%;
+}
+
+/* ====================================== */
+/* *         قسم Hero الرئيسي           */
+/* ====================================== */
+
+/* * الحاوية الكبرى لقسم Hero */
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5rem auto;
+    max-width: 1200px;
+}
+
+/* # توزيع العناصر بالداخل */
+.hero-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 3rem;
+}
+
+/* ! تم إصلاح position من fixed إلى absolute */
+/* ! fixed كان يجعل السهم يتبع الشاشة عند التمرير */
+.arrow {
+    position: absolute;
+    transform: translateX(-6.5rem) translate(1.1rem);
+}
+
+/* # قسم النصوص */
+.hero-content {
+    flex: 1;
+    min-width: 300px;
+    max-width: 500px;
+}
+
+/* # النص الرئيسي */
+.hero-text {
+    font-size: 3rem;
+    color: #EEEEEE;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+/* # ترتيب عناصر Hero عمودياً */
+.hero-subtitle {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* # اسم المطور */
+.name {
+    font-size: 3rem;
+    color: #EEEEEE;
+}
+
+/* * المسمى الوظيفي بلون مميز */
+.title {
+    font-size: 4rem;
+    color: #00ADB5;
+}
+
+/* ====================================== */
+/* *         أزرار Hero                  */
+/* ====================================== */
+
+/* # زر Contact Me */
+/* ! text-shadow فيه خطأ إملائي: opx يجب أن تكون 0px */
+.contact-me {
+    background-color: #00ADB5;
+    color: #ffffff;
+    border-radius: 24px;
+    text-decoration: none;
+    padding: 0.75rem 1.5rem;
+    text-shadow: 0px 0px 4px 8px rgba(0, 173, 181, 0.3);
+}
+
+/* * تأثير رفع الزر عند التمرير */
+.contact-me:hover {
+    background-color: #00c9d7;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(0, 173, 181, 0.3);
+}
+
+/* # زر Presentation */
+.Presentation {
+    background-color: #00ADB5;
+    color: #ffffff;
+    border-radius: 24px;
+    text-decoration: none;
+    padding: 0.75rem 1.5rem;
+    text-shadow: 0px 0px 4px 8px rgba(0, 173, 181, 0.3);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5px;
+    backdrop-filter: blur(4px);
+}
+
+/* * تأثير رفع الزر عند التمرير */
+.Presentation:hover {
+    background-color: #00c9d7;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(0, 173, 181, 0.3);
+}
+
+/* ====================================== */
+/* *         قسم About Me               */
+/* ====================================== */
+
+/* * الحاوية الرئيسية لقسم About Me */
+#Aboutme {
+    display: flex;
+    justify-content: center;
+    padding: 8rem 2rem;
+    /* # لون خلفية غامق يتناسب مع ألوان الموقع */
+    background-color: #222831;
+}
+
+/* # الحاوية الداخلية */
+.about-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 6rem;
+    max-width: 1100px;
+    width: 100%;
+}
+
+/* # صورة قسم About Me */
+.about-img {
+    width: 350px;
+    height: auto;
+    filter: drop-shadow(0px 10px 15px rgba(0, 0, 0, 0.3));
+}
+
+/* # حاوية النص */
+.text-Container {
+    flex: 1;
+}
+
+/* # عنوان القسم */
+.text-Title {
+    display: flex;
+    align-items: baseline;
+    gap: 0.8rem;
+    margin-bottom: 1.5rem;
+}
+
+/* # الجزء الأبيض من العنوان */
+.about-Name { font-size: 3rem; color: #EEEEEE; margin: 0; }
+
+/* * الجزء الملون من العنوان */
+.about-Title { font-size: 3.5rem; color: #00ADB5; margin: 0; }
+
+/* # نص التعريف */
+.about-Par {
+    font-size: 2rem;
+    line-height: 1.8;
+    color: rgba(238, 238, 238, 0.8);
+    margin-bottom: 2rem;
+}
+
+/* ====================================== */
+/* *         الأزرار العامة             */
+/* ====================================== */
+
+/* # تنسيق الأزرار الأساسية */
+.btn {
+    padding: 12px 30px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+/* * الزر الأساسي */
+.btn-primary {
+    background-color: #00ADB5;
+    color: #222831;
+}
+
+.btn-primary:hover {
+    background-color: #00c9d7;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(0, 173, 181, 0.3);
+}
+
+/* # الزر الثانوي بإطار فقط */
+.btn-secondary {
+    background-color: transparent;
+    color: #EEEEEE;
+    border: 2px solid #00ADB5;
+}
+
+.btn-secondary:hover {
+    background-color: rgba(0, 173, 181, 0.1);
+    border-color: #00c9d7;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(0, 173, 181, 0.2);
+}
+
+/* # أيقونة الزر */
+.btn-icon {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}
+
+/* ====================================== */
+/* *         قسم My Works               */
+/* ====================================== */
+
+/* * تنسيق قسم الأعمال */
+.work {
+    background-color: rgba(57, 62, 70, 0.5);
+    /* # تأثير ضبابي للخلفية */
+    backdrop-filter: blur(4px);
+    border-radius: 16px;
+    padding: 3rem 4rem;
+    margin: 5rem 0;
+}
+
+/* # حاوية الأعمال */
+.Works-Container {
+    max-width: 1200px;
+    margin: 0 auto 3rem auto;
+}
+
+/* # عنوان قسم الأعمال */
+.My-Projects {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* # قائمة المشاريع أفقية */
+.projects-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    list-style: none;
+    /* # تنزل لسطر جديد في الشاشات الصغيرة */
+    flex-wrap: wrap;
+}
+
+/* # تنسيق صور المشاريع */
+.projects-list li img {
+    width: 250px;
+    height: 250px;
+    object-fit: contain;
+    transition: transform 0.4s ease;
+    border-radius: 8px;
+    /* # خلفية خفيفة للصور */
+    background: rgba(255, 255, 255, 0.05);
+    padding: 1rem;
+}
+
+/* * تأثير تكبير الصورة عند التمرير */
+.projects-list li img:hover {
+    transform: scale(1.1);
+}
+
+/* ====================================== */
+/* *         قسم Hero Image             */
+/* ====================================== */
+
+/* # حاوية صورة Hero */
+.hero-image-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 250px;
+}
+
+/* # صورة Hero الرئيسية */
+.hero-image {
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    max-height: 400px;
+    object-fit: contain;
+    filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.3));
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* * تأثير تكبير وتدوير الصورة عند التمرير */
+.hero-image:hover {
+    transform: scale(1.05) rotate(2deg);
+    filter: drop-shadow(0 12px 20px rgba(0, 173, 181, 0.3));
+}
+
+/* ====================================== */
+/* *         السهم التزييني             */
+/* ====================================== */
+
+/* # السهم الخلفي التزييني */
+.transparent {
+    position: absolute;
+    left: -60px;
+    top: 50%;
+    z-index: 0;
+    opacity: 0.8;
+    transform: translateY(-50%);
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    transition: all 0.3s ease;
+    /* # يسمح بالنقر خلاله */
+    pointer-events: none;
+}
+
+/* * تأثير إضاءة السهم عند تمرير الماوس */
+.buttons:hover .transparent {
+    opacity: 1;
+    left: -70px;
+    filter: drop-shadow(0 4px 12px rgba(0, 173, 181, 0.4));
+}
+
+/* ====================================== */
+/* *         قسم Contact Me             */
+/* ====================================== */
+
+/* # الحاوية الرئيسية لقسم التواصل */
+.contact-Container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    margin: 5rem auto;
+    max-width: 1200px;
+}
+
+/* # حاوية البريد الإلكتروني */
+.contact-email {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    /* # إطار خفيف شفاف */
+    background: rgba(255, 255, 255, 0.05);
+    padding: 1rem 2rem;
+    border-radius: 12px;
+}
+
+/* # أيقونة البريد */
+.email-icon {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+}
+
+/* # رابط البريد الإلكتروني */
+.contact-email a {
+    color: #EEEEEE;
+    text-decoration: none;
+    font-size: 1.8rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+/* * تغيير اللون عند التمرير */
+.contact-email a:hover {
+    color: #00ADB5;
+}
+
+/* # عنوان قسم التواصل */
+.contact-Title {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+/* ====================================== */
+/* *         أيقونات التواصل            */
+/* ====================================== */
+
+/* # الحاوية الأفقية للأيقونات */
+.social-media {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+/* # تنسيق الدوائر */
+.social-media a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    /* # شكل دائري مثالي */
+    border-radius: 50%;
+    background-color: #222831;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+/* * تأثير رفع الدائرة عند التمرير */
+.social-media a:hover {
+    background-color: #00ADB5;
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 173, 181, 0.4);
+}
+
+/* # تنسيق الأيقونات داخل الدوائر */
+.social-icon {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+    /* ! مهم: يعكس لون الأيقونات السوداء على الخلفية الغامقة */
+    filter: invert(1);
+}
+
+/* ====================================== */
+/* *         Footer                      */
+/* ====================================== */
+
+/* # تنسيق الفوتر */
+footer {
+    color: #EEEEEE;
+    padding: 2rem;
+    text-align: center;
+}
+
+/* ====================================== */
+/* *         تصميم تجاوبي للموبايل      */
+/* ====================================== */
+
+/* ? يتفعل عند عرض الشاشة أقل من 768px */
+@media (max-width: 768px) {
+    /* # تغيير اتجاه About Me للموبايل */
+    .about-wrapper {
+        flex-direction: column;
+        text-align: center;
+    }
+    .text-Title { justify-content: center; }
+}

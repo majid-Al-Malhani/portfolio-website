@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Majid web site</title>
+    <!-- * الملف الرئيسي للموقع الشخصي -->
+    <!-- * يرتبط بملف CSS خارجي للتنسيق -->
+    <link rel="stylesheet" href="My Art Of CSS/STYLE1.CSS">
+</head>
+<body>
+
+    <!-- ====================================== -->
+    <!-- *         قسم الهيدر الرئيسي          -->
+    <!-- ====================================== -->
+    <header>
+
+        <!-- # شعار الموقع -->
+        <div class="logo-container">
+            <img src="My picture/SVG Filse/Mj program logo.svg" class="logo" alt="MJ Professional Logo">
+        </div>
+
+        <!-- # شريط التنقل الرئيسي -->
+        <nav class="navigation">
+            <ul>
+                <!-- # روابط التنقل الداخلية -->
+                <li><a href="#Aboutme">About me</a></li>
+                <li><a href="#MyWorks">My Works</a></li>
+                <li><a href="#ContactMe">Contact Me</a></li>
+
+                <!-- * قائمة More Info المنسدلة -->
+                <li class="dropdown">
+                    <a href="#">More Info ▾</a>
+                    <!-- ? تظهر عند تمرير الماوس فقط عبر CSS -->
+                    <ul class="dropdown-menu">
+                        <!-- # رابط GitHub يفتح في تبويب جديد -->
+                        <li><a href="https://github.com/majid-Al-Malhani" target="_blank">GitHub</a></li>
+                        <!-- # رابط داخلي لقسم About Me -->
+                        <li><a href="#Aboutme">About Me</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- # فاصل بين الهيدر والمحتوى -->
+    <hr />
+
+    <!-- ====================================== -->
+    <!-- *         قسم Hero الرئيسي            -->
+    <!-- ====================================== -->
+    <section class="hero">
+
+        <!-- ! السهم يجب أن يكون position absolute في CSS وليس fixed -->
+        <img src="My picture/SVG Filse/arrow.svg" alt="Transmion" class="arrow">
+
+        <div class="hero-subtitle">
+            <!-- # العنوان الرئيسي للموقع -->
+            <h1 class="name">Hi My name is Majid</h1>
+            <!-- * المسمى الوظيفي -->
+            <h2 class="title">Software Developer</h2>
+
+            <div>
+                <!-- # زر التواصل - يأخذ للقسم السفلي -->
+                <a href="#ContactMe" class="contact-me">Contact Me</a>
+                <!-- TODO: استبدل sjdkfhgkjs بمسار الـ CV الحقيقي -->
+                <!-- ! الرابط الحالي غير صحيح ويحتاج تحديث -->
+                <a href="sjdkfhgkjs" download class="Presentation">My Presentation
+                    <img src="My picture/SVG Filse/download.svg" alt="Download Icon">
+                </a>
+            </div>
+        </div>
+
+        <!-- # صورة Hero الرئيسية على اليمين -->
+        <img src="My picture/SVG Filse/Hero.svg" alt="Hero Image" class="hero-image">
+    </section>
+
+    <!-- ====================================== -->
+    <!-- *         قسم About Me                -->
+    <!-- ====================================== -->
+    <section id="Aboutme">
+        <!-- ! تم إصلاح الهيكل - img لا يجب أن يكون حاوية -->
+        <div class="about-wrapper">
+            <!-- # صورة قسم About Me -->
+            <img src="My picture/SVG Filse/AboutMe.svg" alt="About Me" class="about-img">
+
+            <div class="text-Container">
+                <!-- * عنوان القسم مقسم لجزئين بلونين مختلفين -->
+                <div class="text-Title">
+                    <h1 class="about-Name">About</h1>
+                    <h1 class="about-Title">Me</h1>
+                </div>
+                <!-- # نص التعريف الشخصي -->
+                <!-- TODO: تحديث النص ليعكس مستواك الحالي -->
+                <p class="about-Par">
+                    hi, My name is Majid and I'm learning software development.
+                    My discoveries from Programs has to be hard, I enrolled in college of Ibn Sena,
+                    then I used to be learn about: style coding, User interface(UI,UX), Frontend Development,
+                    Backend Development.
+                    At least I'm trying my best!...
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====================================== -->
+    <!-- *         قسم My Works               -->
+    <!-- ====================================== -->
+    <section class="work" id="MyWorks">
+        <div class="Works-Container">
+            <!-- * عنوان القسم مقسم لجزئين بلونين مختلفين -->
+            <div class="My-Projects">
+                <h1 class="about-Name">My Projects</h1>
+                <h1 class="about-Title">Works</h1>
+            </div>
+        </div>
+
+        <!-- # قائمة المشاريع بالصور -->
+        <ul class="projects-list">
+            <!-- TODO: أضف روابط المشاريع الحقيقية -->
+            <li><a href="" target="_blank">
+                <img src="My picture/JPG/Python-logo.png" alt="Project 1"></a></li>
+            <li><a href="" target="_blank">
+                <img src="My picture/JPG/C++.jpg" alt="Project 2"></a></li>
+            <li><a href="" target="_blank">
+                <img src="My picture/JPG/HTML & CSS.png" alt="Project 3"></a></li>
+        </ul>
+    </section>
+
+    <!-- ====================================== -->
+    <!-- *         قسم Contact Me             -->
+    <!-- ====================================== -->
+    <section id="ContactMe" class="contact-Container">
+
+        <!-- * عنوان القسم مقسم لجزئين بلونين مختلفين -->
+        <div class="contact-Title">
+            <h1 class="about-Name">Contact</h1>
+            <h1 class="about-Title">Me</h1>
+        </div>
+
+        <!-- # البريد الإلكتروني مع أيقونة -->
+        <div class="contact-email">
+            <img src="My picture/SVG Filse/Mail.svg" alt="Outlook Logo" class="email-icon">
+            <!-- ? يفتح Gmail مباشرة عند الضغط -->
+            <a href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox">majid99hw@gmail.com</a>
+        </div>
+
+        <!-- # أيقونات التواصل الاجتماعي -->
+        <div class="social-media">
+            <!-- # رابط GitHub -->
+            <a href="https://github.com/majid-Al-Malhani" target="_blank">
+                <img src="My picture/SVG Filse/Git LOgo.svg" alt="GitHub Logo" class="social-icon"></a>
+            <!-- # رابط X (Twitter) -->
+            <a href="https://x.com/majid99hw" target="_blank">
+                <img src="My picture/SVG Filse/X logo.svg" alt="X Logo" class="social-icon"></a>
+        </div>
+    </section>
+
+    <!-- ====================================== -->
+    <!-- *              Footer                 -->
+    <!-- ====================================== -->
+    <!-- * حقوق النشر والمصمم -->
+    <footer>
+        <p>&copy; 2026 Majid Al-Musleh. All rights reserved. &copy;Designed by Mohammad Othman</p>
+    </footer>
+
+</body>
+</html>
