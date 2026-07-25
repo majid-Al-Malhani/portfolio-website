@@ -620,4 +620,63 @@ footer {
         left: auto;
         right: 0;
     }
+
+    /* # قسم Hero على الموبايل */
+    .hero {
+        flex-direction: column;
+        margin: 2rem auto;
+        padding: 0 20px;
+        text-align: center;
+    }
+
+    /* * تصغير النصوص لتناسب الشاشة */
+    .name {
+        font-size: 2rem;
+    }
+    .title {
+        font-size: 2.5rem;
+    }
+
+    /* # توسيط أزرار Hero عموديًا */
+    .hero-subtitle {
+        align-items: center;
+    }
+
+    /* ! إخفاء السهم الزخرفي على الموبايل لتفادي مشاكل الموضع */
+    .arrow {
+        display: none;
+    }
+
+    /* # تحديد أقصى عرض لصورة Hero لمنع خروجها عن الشاشة */
+    .hero-image {
+        max-width: 90%;
+        max-height: 250px;
+    }
+
+    /* # قسم My Works على الموبايل */
+    .work {
+        padding: 2rem 1.5rem;
+        margin: 3rem 0;
+    }
+
+    /* * تصغير عنوان القسم وترتيبه عموديًا */
+    .My-Projects {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.3rem;
+        text-align: center;
+    }
+
+    .My-Projects .about-Name {
+        font-size: 2rem;
+    }
+    .My-Projects .about-Title {
+        font-size: 2.3rem;
+    }
+
+    /* # تصغير صور المشاريع لتناسب الشاشة */
+    .projects-list li img {
+        width: 200px;
+        height: 200px;
+    }
 }
