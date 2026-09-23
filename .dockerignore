@@ -1,0 +1,10 @@
+# * ملفات Git لا حاجة لها داخل الصورة
+.git/
+.gitignore
+
+# ! ملف تشغيل خاص بويندوز، لا معنى له داخل حاوية Linux
+start.bat
+
+# * ملفات Docker نفسها
+Dockerfile
+.dockerignore
